@@ -40,7 +40,7 @@ def load_incident(file_path: str) -> dict:
 
 if __name__ == "__main__":
     incident = load_incident(
-        "Evidence\data\incidents\INC-001.json"
+        "Evidence/data/incidents/INC-001.json"
     )
 
     print("Incident loaded successfully!")
