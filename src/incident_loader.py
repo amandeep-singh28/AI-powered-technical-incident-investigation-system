@@ -23,6 +23,18 @@ def load_incident(file_path: str) -> dict:
         if field not in incident:
             raise ValueError(f"Missing required field: {field}")
 
+    # Validate severity
+    allowed_severities = {"low", "medium", "high", "critical"}
+
+    if incident["severity"] not in allowed_severities:
+        raise ValueError("Invalid incident severity")
+
+    # Validate timestamp format
+    try:
+        datetime.fromisoformat(incident["reported_at"])
+    except ValueError:
+        raise ValueError("Invalid reported_at timestamp")
+
     return incident
 
 
