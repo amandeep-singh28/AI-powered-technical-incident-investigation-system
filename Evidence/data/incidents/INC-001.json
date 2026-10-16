@@ -1,0 +1,18 @@
+
+{
+  "incident_id": "INC-001",
+  "title": "Website Checkout Failure",
+  "severity": "high",
+  "status": "investigating",
+  "reported_at": "2026-10-15T10:05:00",
+  "reported_by": "support_team",
+  "description": "Customers are unable to complete purchases through the website checkout.",
+  "impact": {
+    "affected_service": "checkout-api",
+    "user_impact": "Customers cannot complete purchases"
+  },
+  "initial_observations": [
+    "A deployment occurred shortly before the failures were reported",
+    "The cause of the incident has not yet been confirmed"
+  ]
+}

@@ -1,0 +1,9 @@
+2026-10-15T10:00:00 INFO  checkout-api Application started
+2026-10-15T10:01:00 INFO  checkout-api Health check passed
+2026-10-15T10:02:00 INFO  deployment Deployment started: version 1.4.2
+2026-10-15T10:02:30 INFO  deployment Deployment completed: version 1.4.2
+2026-10-15T10:03:00 INFO  checkout-api Processing checkout request
+2026-10-15T10:03:02 ERROR checkout-api Database connection failed
+2026-10-15T10:03:05 ERROR checkout-api Checkout request failed: HTTP 500
+2026-10-15T10:04:00 ERROR checkout-api Database connection failed
+2026-10-15T10:05:00 WARN  checkout-api Checkout failures reported by support
