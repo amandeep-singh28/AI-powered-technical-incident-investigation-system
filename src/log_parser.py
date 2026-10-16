@@ -35,10 +35,33 @@ def load_logs(file_path: str) -> list[dict]:
     return events
 
 
+def analyze_logs(events: list[dict]) -> dict:
+    """Summarize log events for an incident."""
+
+    sorted_events = sorted(
+        events,
+        key=lambda event: event["timestamp"]
+    )
+
+    errors = [
+        event for event in sorted_events
+        if event["level"] == "ERROR"
+    ]
+
+    return {
+        "total_events": len(sorted_events),
+        "error_count": len(errors),
+        "first_event": sorted_events[0] if sorted_events else None,
+        "first_error": errors[0] if errors else None,
+        "timeline": sorted_events,
+    }
+
 if __name__ == "__main__":
     logs = load_logs("Evidence/data/logs/INC-001.log")
+    report = analyze_logs(logs)
 
-    print(f"Loaded {len(logs)} log events")
+    print("Total events:", report["total_events"])
+    print("Error count:", report["error_count"])
+    print("First event:", report["first_event"])
+    print("First error:", report["first_error"])
 
-    for event in logs:
-        print(event)
